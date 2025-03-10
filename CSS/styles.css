@@ -19,16 +19,19 @@ header .logo img {
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex; /* 横排菜单 */
+    justify-content: center; /* 居中 */
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin: 0 15px; /* 调整间距 */
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 18px;
 }
 
 main {
