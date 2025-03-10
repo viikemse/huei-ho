@@ -6,10 +6,13 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #007BFF; /* 改为蓝色 */
     color: #fff;
     padding: 10px 0;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
 header .logo img {
@@ -20,24 +23,28 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex!important; /* 提高优先级 */
-    justify-content: center; /* 菜单项居中 */
-    align-items: center; /* 垂直居中 */
+    display: flex; /* 确保菜单横排 */
+    align-items: center;
 }
 
 nav ul li {
-    margin: 0 15px; /* 调整菜单项之间的间距 */
+    margin: 0 10px; /* 调整菜单项间距 */
 }
 
 nav ul li a {
-    color: #fff;
+    color: #fff; /* 菜单项文字颜色为白色 */
     text-decoration: none;
     font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #f4f4f4; /* 鼠标悬停时文字颜色 */
 }
 
 main {
     padding: 20px;
     text-align: center;
+    margin-top: 20px;
 }
 
 footer {
@@ -49,4 +56,3 @@ footer {
     width: 100%;
     bottom: 0;
 }
-
