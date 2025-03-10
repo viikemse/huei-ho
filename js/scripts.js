@@ -8,7 +8,20 @@ function toggleLanguage() {
     const currentLang = getCurrentLanguage();
     const targetLang = currentLang === 'zh-CN' ? 'en' : 'zh-CN';
     const currentPage = window.location.pathname.split('/').pop(); // 获取当前文件名
-    window.location.href = `/${targetLang}/${currentPage}`; // 跳转到对应语言版本
+    const targetPath = `/${targetLang}/${currentPage}`; // 跳转到对应语言版本
+
+    // 检查目标文件是否存在
+    fetch(targetPath)
+        .then(response => {
+            if (response.ok) {
+                window.location.href = targetPath; // 文件存在，跳转
+            } else {
+                alert('Page not found in the selected language.'); // 文件不存在，提示用户
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }
 
 // 绑定语言切换按钮
