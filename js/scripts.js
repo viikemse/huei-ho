@@ -8,7 +8,20 @@ function toggleLanguage() {
     const currentLang = getCurrentLanguage();
     const targetLang = currentLang === 'zh-CN' ? 'en' : 'zh-CN';
     const currentPage = window.location.pathname.split('/').pop(); // 获取当前文件名
-    const targetPath = `/${targetLang}/${currentPage}`; // 跳转到对应语言版本
+
+    // 根据目标语言生成目标路径
+    let targetPath;
+    if (targetLang === 'en') {
+        targetPath = `/en/${currentPage}`; // 跳转到英文版
+    } else {
+        targetPath = `/${currentPage}`; // 跳转到中文版（根目录）
+    }
+
+    // 调试信息：打印路径信息
+    console.log('Current Language:', currentLang);
+    console.log('Target Language:', targetLang);
+    console.log('Current Page:', currentPage);
+    console.log('Target Path:', targetPath);
 
     // 检查目标文件是否存在
     fetch(targetPath)
